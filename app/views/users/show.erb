@@ -1,0 +1,6 @@
+<p> Here are your Superheroes, <%= @user.username %>
+<% @user.superheroes.each do |superhero| %>
+  <ul>
+    <li><a href="/superheroes/<%=superhero.id%>"><%= superhero.name %></a></li>
+  </ul>
+<% end %>
