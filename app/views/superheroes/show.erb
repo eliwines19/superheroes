@@ -1,0 +1,12 @@
+<%= @superhero.name %><br />
+<%= @superhero.superpower %> <br />
+
+<h2>Sidekick</h2>
+<ul>
+<% @superhero.sidekicks.each do |sidekick| %>
+  <li><a href="/sidekicks/<%=sidekick.id%>"><%= sidekick.name %></a></li>
+<% end%>
+</ul>
+<a href="/superheroes/<%=@superhero.id%>/edit">Edit</a>
+<br />
+<br />
