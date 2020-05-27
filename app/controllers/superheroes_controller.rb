@@ -35,7 +35,7 @@ class SuperheroController < ApplicationController
     erb :'superheroes/show'
   end
 
-  post "/superheores" do
+  post "/superheroes" do
     redirect_if_not_logged_in
 
     unless Superhero.valid_params?(params)
