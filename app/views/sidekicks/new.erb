@@ -10,7 +10,7 @@
   <label> Which Superhero does this Sidekick belong to? </label>
   <select name="superhero_id">
     <% current_user.superheroes.each do |superhero| %>
-      <option value=<%=superhero.id %>><%= superhero.name %></option>
+      <input type="text" value=<%=superhero.id %>><%= superhero.name %>>
     <% end %>
   </select>
 

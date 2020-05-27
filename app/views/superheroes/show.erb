@@ -1,11 +1,17 @@
+<h3>Meet your Heroes!</h3>
 <%= @superhero.name %><br />
 <%= @superhero.superpower %> <br />
 
-<h2>Sidekick</h2>
-<ul>
-<% @superhero.sidekicks.each do |sidekick| %>
-  <li><a href="/sidekicks/<%=sidekick.id%>"><%= sidekick.name %></a></li>
-<% end%>
+<% if @superhero.sidekicks.empty? %>
+  <p>This hero does not yet have a sidekick!</p>
+<% else %>
+  <h2>Sidekick</h2>
+  <ul>
+  <% @superhero.sidekicks.each do |sidekick| %>
+    <li><a href="/sidekicks/<%=sidekick.id%>"><%= sidekick.name %></a></li>
+  <% end%>
+<% end %>
+
 </ul>
 <a href="/superheroes/<%=@superhero.id%>/edit">Edit</a>
 <br />
