@@ -1,34 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Hero Creator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  </head>
-  <body>
-    <nav>
-      <% if logged_in? %>
+<head>
+</head>
+<body>
+  <nav>
+    <% if logged_in? %>
 
-        <a href="/sidekicks/new"> Create a Sidekick </a>
-        <a href="/superheroes/new"> Create a Superhero </a>
-        <a href="/logout"> Log Out </a>
-        <p>Welcome!</p>
+    <center><h2>Welcome to Create a Superhero!</h2></center>
+    <center><a href="/superheroes/new"> Create a Superhero </a><br></center>
+    <center><a href="/sidekicks/new"> Create a Sidekick </a><br></center>
+    <center><a href="/logout"> Log Out </a><br></center>
 
-      <% else %>
-        <a href="/signup">Sign Up</a>
-        <a href="/login"> Sign In </a>
-      <%end %>
+    <% else %>
+      <a href="/signup">Sign Up</a><br>
+      <a href="/login"> Sign In </a><br>
+    <%end %>
 
-    </nav>
-    <div class="container">
-      <h1>Hero Creator</h1>
-      <% if !@error_message.nil? %>
-      <div class="alert alert-warning">
-        <%= @error_message %>
-      </div>
-    <% end %>
-      <%= yield %>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  </body>
+  </nav>
+    <%= yield %>
+</body>
 </html>
