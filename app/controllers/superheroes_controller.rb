@@ -25,7 +25,7 @@ class SuperheroController < ApplicationController
     unless Superhero.valid_params?(params)
       redirect "/superheroes/#{@superhero.id}/edit?error=invalid hero"
     end
-    @superhero.update(params.select{|s|s=="name" || s=="superpower"})
+    @superhero.update(params.select{|s|s=="name" || s=="superpower" || s=="motto" || s=="suit_color" || s=="city" || s=="age"})
     redirect "/superheroes/#{@superhero.id}"
   end
 
@@ -44,4 +44,12 @@ class SuperheroController < ApplicationController
     Superhero.create(params)
     redirect "/superheroes"
   end
+
+  delete '/superheroes/:id/delete' do
+    redirect_if_not_logged_in
+    @superhero = Superhero.find(params[:id])
+    @superhero.delete
+    redirect to '/superheroes'
+  end
+
 end
