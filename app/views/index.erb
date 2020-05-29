@@ -1,2 +1,6 @@
-<u><center><h1>Welcome to Create a Superhero!</h1></center></u>
-<center><h2>Sign up or log in to create your very own Superhero!</h2></center>
+<% if logged_in? %>
+  <center><h4>Select an option above</h4></center>
+<% else %>
+  <u><center><h1>Welcome to Create a Superhero!</h1></center></u>
+  <center><h2>Sign up or log in to create your very own Superhero!</h2></center>
+<%end %>
