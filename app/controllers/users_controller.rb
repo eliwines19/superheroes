@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if !session[:user_id]
       erb :'users/new'
     else
-      redirect to '/sidekicks'
+      redirect to '/superheroes'
     end
   end
 
