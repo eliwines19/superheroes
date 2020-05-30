@@ -4,4 +4,5 @@ class Superhero < ActiveRecord::Base
   def self.valid_params?(params)
     return !params[:name].empty? && !params[:superpower].empty?
   end
+
 end

@@ -1,17 +1,18 @@
 <% if Superhero.first.nil?  %>
   <h3>No heroes created yet... click 'Create a Superhero' to get started!</h3>
 <% else %>
-  <u><h2>Meet the Heroes!</h2></u>
+  <center><u><h2>Meet the Heroes!</h2></u>
   <% @superheroes.each do |superhero| %>
+    <h4>created by <%= current_user.username %></h4>
     <u><h3>Name:</u> <%= superhero.name %></h3>
     <u><h3>Superpower:</u> <%= superhero.superpower %></h3>
     <u><h3>Motto:</u> <%= superhero.motto %></h3>
     <u><h3>Suit Color:</u> <%= superhero.suit_color %></h3>
     <u><h3>City:</u> <%= superhero.city %></h3>
     <u><h3>Age:</u> <%= superhero.age %></h3>
-    <a href="/superheroes/<%=superhero.id%>/edit">Edit this hero</a>
-    <br />
-    <br />
+      <a href="/superheroes/<%=superhero.id%>/edit">Edit this hero</a>
+      <br />
+      <br />
   <% end %>
 
 <% end %>
