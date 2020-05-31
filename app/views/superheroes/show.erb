@@ -1,10 +1,14 @@
-<u><h2>Meet the Heroes!</h2></u>
-<u><h3>Name:</u> <%= @superhero.name %></h3>
-<u><h3>Superpower:</u> <%= @superhero.superpower %></h3>
-<u><h3>Motto:</u> <%= @superhero.motto %></h3>
-<u><h3>Suit Color:</u> <%= @superhero.suit_color %></h3>
-<u><h3>City:</u> <%= @superhero.city %></h3>
-<u><h3>Age:</u> <%= @superhero.age %></h3>
-<a href="/superheroes/<%=@superhero.id%>/edit">Edit Again?</a><br>
-<br />
-<br />
+<% @superhero.each do |name| %>
+<br  /><center><u>Name:</u> <%= hero.name %><br>
+<u>Superpower:</u> <%= hero.superpower %><br>
+<u>Motto:</u> <%= hero.motto %><br>
+<u>Suit Color:</u><%= hero.suit_color %><br>
+<u>City:</u> <%= hero.city %><br>
+<u>Age:</u> <%= hero.age %><br>
+<a href="/superheroes/<%=@superhero.id%>/edit">Edit Hero </a>
+
+
+<form method="post" action="/superheroes/<%=@superhero.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Hero">
+</form>

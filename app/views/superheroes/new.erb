@@ -1,23 +1,11 @@
-<h1>Add a New Superhero</h1>
+<h2>Add a Hero</h2>
+<form action='/superheroes' method="POST">
+<p>Name: <input type="text" name="name"></p>
+<p>Superpower: <input type="text" name="superpower"></p>
+<p>Motto: <input type="text" name="motto"></p>
+<p>Suit Color: <input type="text" name="suit_color"></p>
+<p>City: <input type="text" name="city"></p>
+<p>Age: <input type="integer" name="age"></p>
 
-<form action="/superheroes" method="POST">
-  <label> Superhero Name </label>
-  <input type="text" name="name"> </br>
-
-  <label> Superhero Superpower </label>
-  <input type="text" name="superpower"> </br>
-
-  <label> Superhero Motto </label>
-  <input type="text" name="motto"> </br>
-
-  <label> Superhero Suit Color </label>
-  <input type="text" name="suit_color"> </br>
-
-  <label> Superhero City </label>
-  <input type="text" name="city"> </br>
-
-  <label> Superhero age </label>
-  <input type="integer" name="age"> </br>
-
-  <input type="submit" value="Create">
+<input type="submit" value="submit">
 </form>
