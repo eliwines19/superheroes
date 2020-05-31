@@ -1,28 +1,12 @@
-<h1>Edit <%= @superhero.name %></h1>
+<h2> Edit Hero </h2>
 
-<form action="/superheroes/<%=@superhero.id %>" method="POST">
-  <label> Superhero Name </label>
-  <input type="text" name="name" value="<%=@superhero.name %>"> </br>
-
-  <label> Superhero Superpower </label>
-  <input type="text" name="superpower" value="<%=@superhero.superpower %>"> </br>
-
-  <label> Superhero Motto </label>
-  <input type="text" name="motto" value="<%=@superhero.motto %>"> </br>
-
-  <label> Superhero Suit Color </label>
-  <input type="text" name="suit_color" value="<%=@superhero.suit_color %>"> </br>
-
-  <label> Superhero City </label>
-  <input type="text" name="city" value="<%=@superhero.city %>"> </br>
-
-  <label> Superhero Age </label>
-  <input type="integer" name="age" value="<%=@superhero.age %>"> </br>
-
-  <input type="submit" value="Update">
-</form>
-
-<form action="/superheroes/<%= @superhero.id %>/delete" method="post">
-    <input type="hidden" id="hidden" name="_method" value="DELETE">
-  <button type="submit">Delete This Hero</button>
+<form method="post" action="/superheroes/<%=@superhero.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="name" value="<%= @superhero.name %>">
+  <input type="text" name="superpower" value="<%= @superhero.superpower %>">
+  <input type="text" name="motto" value="<%= @superhero.motto %>">
+  <input type="text" name="suit_color" value="<%= @superhero.suit_color %>">
+  <input type="text" name="city" value="<%= @superhero.city %>">
+  <input type="integer" name="age" value="<%= @superhero.age %>">
+  <input type="submit" value="submit">
 </form>

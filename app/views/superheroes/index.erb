@@ -1,13 +1,13 @@
+<center><h2> Meet the Heroes </h2>
 
-<center><h2> Meet the Heroes! </h2>
 <% @superheroes.each do |hero| %>
-  <div>
-      <u>Name:</u> <%= hero.name %><br>
-      <u>Superpower:</u> <%= hero.superpower %><br>
-      <u>Motto:</u> <%= hero.motto %><br>
-      <u>Suit Color:</u><%= hero.suit_color %><br>
-      <u>City:</u> <%= hero.city %><br>
-      <u>Age:</u> <%= hero.age %><br>
-  </div>
-  <br  />
+    <div>
+        <u>Hero's Name:</u> <%= hero.name %><br>
+        <u>Hero's Superpower:</u> <%= hero.superpower %><br>
+        <u>Hero's Motto:</u> <%= hero.motto %><br>
+        <u>Hero's Suit Color:</u> <%= hero.suit_color %><br>
+        <u>Hero's City:</u> <%= hero.city %><br>
+        <u>Hero's Age:</u> <%= hero.age %><br>
+        <br>
+    </div>
 <% end %>

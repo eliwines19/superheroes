@@ -1,14 +1,13 @@
-<% @superhero.each do |name| %>
-<br  /><center><u>Name:</u> <%= hero.name %><br>
-<u>Superpower:</u> <%= hero.superpower %><br>
-<u>Motto:</u> <%= hero.motto %><br>
-<u>Suit Color:</u><%= hero.suit_color %><br>
-<u>City:</u> <%= hero.city %><br>
-<u>Age:</u> <%= hero.age %><br>
-<a href="/superheroes/<%=@superhero.id%>/edit">Edit Hero </a>
-
+<p>Hero's Name: <%= @superhero.name %></p>
+<p>Hero's Superpower: <%= @superhero.superpower %></p>
+<p>Hero's Motto: <%= @superhero.motto %></p>
+<p>Hero's Suit Color: <%= @superhero.suit_color %></p>
+<p>Hero's City: <%= @superhero.city %></p>
+<p>Hero's Age: <%= @superhero.age %></p>
 
 <form method="post" action="/superheroes/<%=@superhero.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Hero">
 </form>
+
+<a href="/superheroes/<%=@superhero.id%>/edit">Edit Hero </a>
