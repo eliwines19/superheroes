@@ -2,11 +2,11 @@
 
 <form method="post" action="/superheroes/<%=@superhero.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
-  <input type="text" name="name" value="<%= @superhero.name %>">
-  <input type="text" name="superpower" value="<%= @superhero.superpower %>">
-  <input type="text" name="motto" value="<%= @superhero.motto %>">
-  <input type="text" name="suit_color" value="<%= @superhero.suit_color %>">
-  <input type="text" name="city" value="<%= @superhero.city %>">
-  <input type="integer" name="age" value="<%= @superhero.age %>">
-  <input type="submit" value="submit">
+  <p>Hero's Name: </p><input type="text" name="name" value="<%= @superhero.name %>"><br>
+  <p>Hero's Superpower: </p><input type="text" name="superpower" value="<%= @superhero.superpower %>"><br>
+  <p>Hero's Motto: </p><input type="text" name="motto" value="<%= @superhero.motto %>"><br>
+  <p>Hero's Suit Color: </p><input type="text" name="suit_color" value="<%= @superhero.suit_color %>"><br>
+  <p>Hero's City: </p><input type="text" name="city" value="<%= @superhero.city %>"><br>
+  <p>Hero's Age: <br><br><input type="integer" name="age" value="<%= @superhero.age %>"><br><br>
+  <input type="submit" value="Change Hero">
 </form>

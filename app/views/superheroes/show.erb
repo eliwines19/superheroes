@@ -5,9 +5,10 @@
 <p>Hero's City: <%= @superhero.city %></p>
 <p>Hero's Age: <%= @superhero.age %></p>
 
+<a href="/superheroes/<%=@superhero.id%>/edit">Edit Hero </a><br>
+<a href="/superheroes">Look's Good! </a>
+
 <form method="post" action="/superheroes/<%=@superhero.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Hero">
 </form>
-
-<a href="/superheroes/<%=@superhero.id%>/edit">Edit Hero </a>
