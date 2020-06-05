@@ -38,6 +38,15 @@ class UsersController < ApplicationController
       end
   end
 
+  get '/users/heroes' do
+    if logged_in?
+      @heroes = current_user.superheros
+      erb :'/users/heroes'
+    else
+      redirect to '/login'
+    end
+  end
+
   get '/logout' do
       if logged_in?
           logout!

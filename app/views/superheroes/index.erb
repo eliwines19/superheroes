@@ -1,14 +1,23 @@
-<center><h2> Meet the Heroes </h2>
+<% if Superhero.first.nil? %>
 
-<% @superheroes.each do |hero| %>
-    <div>
-        <u>Hero's Name:</u> <%= hero.name %><br>
-        <u>Hero's Superpower:</u> <%= hero.superpower %><br>
-        <u>Hero's Motto:</u> <%= hero.motto %><br>
-        <u>Hero's Suit Color:</u> <%= hero.suit_color %><br>
-        <u>Hero's City:</u> <%= hero.city %><br>
-        <u>Hero's Age:</u> <%= hero.age %><br>
-        <u>Hero ID Number:</u> <%= hero.id %><br>
-        <br>
-    </div>
+  <center><h3>No heroes have been created yet...</h3>
+  <p>Click Creat a Superhero to create one!</p>
+
+<% else %>
+
+  <center><h2> Meet the Heroes </h2>
+
+  <% @superheroes.each do |hero| %>
+      <div>
+          <u>Hero's Name:</u> <%= hero.name %><br>
+          <u>Hero's Superpower:</u> <%= hero.superpower %><br>
+          <u>Hero's Motto:</u> <%= hero.motto %><br>
+          <u>Hero's Suit Color:</u> <%= hero.suit_color %><br>
+          <u>Hero's City:</u> <%= hero.city %><br>
+          <u>Hero's Age:</u> <%= hero.age %><br>
+          <u>Hero ID Number:</u> <%= hero.id %><br>
+          <br>
+      </div>
+  <% end %>
+
 <% end %>

@@ -1,0 +1,19 @@
+<% if @heroes.first.nil? %>
+
+  <center><h3>You haven't created any heroes yet, <%= current_user.username %></h3>
+  <p>Click Creat a Superhero to create one!</p>
+
+<% else %>
+
+  <center><h2>Here are your Heroes, <%= current_user.username %>!</h2>
+  <% @heroes.collect do |hero| %>
+    <u>Hero's Name:</u> <%= hero.name %><br>
+    <u>Hero's Superpower:</u> <%= hero.superpower %><br>
+    <u>Hero's Motto:</u> <%= hero.motto %><br>
+    <u>Hero's Suit Color:</u> <%= hero.suit_color %><br>
+    <u>Hero's City:</u> <%= hero.city %><br>
+    <u>Hero's Age:</u> <%= hero.age %><br>
+    <u>Hero's ID Number:</u> <%= hero.id %><br><br>
+  <% end %>
+
+<% end %>
