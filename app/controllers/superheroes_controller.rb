@@ -60,7 +60,7 @@ class SuperheroController < ApplicationController
       else
         @superhero = Superhero.find_by_id(params[:id])
         if @superhero && @superhero.user == current_user
-          if @superhero.update(name: params[:name], superpower: params[:superpower], motto: params[:motto], suit_color: params[:suit_color], city: params[:city], age: params[:age])
+          if @superhero.update(superhero_params)
             redirect to "/superheroes/#{@superhero.id}"
           else
             redirect to "/superheroes/#{@superhero.id}.edit"
@@ -84,6 +84,14 @@ class SuperheroController < ApplicationController
     else
       redirect to '/login'
     end
+  end
+
+  helpers do
+
+    def superhero_params
+      @params = {:name => params[:name], :superpower => params[:superpower], :suit_color => params[:suit_color], :motto => params[:motto], :city => params[:city], :age => params[:age]}
+    end
+
   end
 
 
